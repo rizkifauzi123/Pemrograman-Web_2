@@ -1,7 +1,7 @@
 <?php
 $nama = $_GET['nama'];
 $matkul = $_GET['Matkul'];
-$tugas= $_GET['tugas'];
+$tugas = $_GET['tugas'];
 $uts = $_GET['uts'];
 $uas = $_GET['uas'];
 $total_nilai = ($tugas + $uts + $uas) / 3;
