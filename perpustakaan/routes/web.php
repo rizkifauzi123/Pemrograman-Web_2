@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegistrasiPeminjamanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +34,9 @@ Route::get('/kesehatan', function () {
     return view('kesehatan');
 });
 
+Route::get('/form-registrasi-anggota', [RegistrasiAnggotaController::class, 'index']);
+Route::post('/hasil-regist', [RegistrasiAnggotaController::class, 'hasil']);
+
+
+Route::get('/form-peminjaman-buku', [RegistrasiPeminjamanController::class, 'index']);
+Route::post('/hasil-peminjaman', [RegistrasiPeminjamanController::class, 'hasil']);
