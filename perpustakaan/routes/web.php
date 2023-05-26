@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegistrasiPeminjamanController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +38,10 @@ Route::get('/kesehatan', function () {
 Route::get('/form-registrasi-anggota', [RegistrasiAnggotaController::class, 'index']);
 Route::post('/hasil-regist', [RegistrasiAnggotaController::class, 'hasil']);
 
-
+//praktikum 9
 Route::get('/form-peminjaman-buku', [RegistrasiPeminjamanController::class, 'index']);
 Route::post('/hasil-peminjaman', [RegistrasiPeminjamanController::class, 'hasil']);
+
+
+//praktkum 10
+Route::get('/dashboard', [DashboardController::class, 'index']);
