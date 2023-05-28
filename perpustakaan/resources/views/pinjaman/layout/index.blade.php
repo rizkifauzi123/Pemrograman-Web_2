@@ -1,0 +1,5 @@
+@include('pinjaman.layout.navbar1')
+@include('pinjaman.layout.sidebar1')
+@yield('content1')
+@yield('books')
+@include('pinjaman.layout.footer1')

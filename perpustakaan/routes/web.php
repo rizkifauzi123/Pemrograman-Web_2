@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegistrasiPeminjamanController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DashboardPeminjamanController;
+use App\Http\Controllers\BooksController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,3 +47,9 @@ Route::post('/hasil-peminjaman', [RegistrasiPeminjamanController::class, 'hasil'
 
 //praktkum 10
 Route::get('/dashboard', [DashboardController::class, 'index']);
+
+
+//tugas pekan ke 10
+
+Route::get('/tampilan', [DashboardPeminjamanController::class, 'index']);
+Route::get('/books', [BooksController::class, 'index']);
