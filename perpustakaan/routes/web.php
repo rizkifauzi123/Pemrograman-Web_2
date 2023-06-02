@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegistrasiPeminjamanController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DashboardPeminjamanController;
-use App\Http\Controllers\BooksController;
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\MemberController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -52,4 +54,10 @@ Route::get('/dashboard', [DashboardController::class, 'index']);
 //tugas pekan ke 10
 
 Route::get('/tampilan', [DashboardPeminjamanController::class, 'index']);
-Route::get('/books', [BooksController::class, 'index']);
+//Route::get('/books', [BooksController::class, 'index']);
+
+
+// praktikum 11
+Route::get('/tampilan/book', [BookController::class, 'index']);
+
+Route::get('/tampilan/member', [MemberController::class, 'index']);

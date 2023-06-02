@@ -25,15 +25,18 @@
                 <tr class="table-primary text-uppercase">
                     <th>No</th>
                     <th>Judul</th>
+                    <th>Isbn</th>
                     <th>Jumlah tersedia</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
+              @foreach ($books as $book)
                     <tr class="table-light text-uppercase">
-                        <td>1</td>
-                        <td>Cintaku Cintamu</td>
-                        <td>112</td>
+                        <td> {{ $loop->iteration }}</td>
+                        <td> {{ $book->title }}</td>
+                        <td> {{ $book->isbn }}</td>
+                        <td> {{ $book->stok }}</td>
                         <td>
     <a class="btn btn-primary" href="#?id=">View</a>
     <a class="btn btn-warning" href="#?idedit=">Edit</a>
@@ -42,6 +45,7 @@
     >Delete</a>
     </td>
     </tr>
+    @endforeach
             </tbody>
         </table>  
         </div>

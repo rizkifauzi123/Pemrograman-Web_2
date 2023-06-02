@@ -2,4 +2,5 @@
 @include('pinjaman.layout.sidebar1')
 @yield('content1')
 @yield('books')
+@yield('members')
 @include('pinjaman.layout.footer1')

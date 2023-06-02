@@ -24,9 +24,15 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url ('books')}}">
+              <a class="nav-link" href="{{url ('/tampilan/book') }}">
                 <span class="menu-title">Buku</span>
                 <i class="mdi mdi-view-grid menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url ('/tampilan/member') }}">
+                <span class="menu-title">Members</span>
+                <i class="mdi mdi-account-multiple-plus menu-icon"></i>
               </a>
             </li>
           </ul>
