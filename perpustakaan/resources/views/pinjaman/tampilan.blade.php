@@ -1,5 +1,5 @@
 @extends('pinjaman.layout.index')
-@section('content1')
+@section('content')
 <div class="content-wrapper">
   <div class="page-header">
     <h3 class="page-title">

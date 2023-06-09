@@ -61,3 +61,15 @@ Route::get('/tampilan', [DashboardPeminjamanController::class, 'index']);
 Route::get('/tampilan/book', [BookController::class, 'index']);
 
 Route::get('/tampilan/member', [MemberController::class, 'index']);
+
+
+// praktikum 12
+Route::get('/tampilan/book/create', [BookController::class, 'create']);
+Route::post('/tampilan/book/store', [BookController::class, 'store']);
+Route::delete('/tampilan/book/destroy/{id}', [BookController::class, 'destroy']);
+
+
+// Tugas Pekan 12
+Route::get('/tampilan/member/create', [MemberController::class, 'create']);
+Route::post('/tampilan/member/store', [MemberController::class, 'store']);
+Route::delete('/tampilan/member/destroy/{id}', [MemberController::class, 'destroy']);

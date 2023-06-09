@@ -1,5 +1,5 @@
 @extends('pinjaman.layout.index')
-@section('members')
+@section('content')
 <div class="content-wrapper">
     <div class="page-header">
       <h3 class="page-title">
@@ -16,7 +16,7 @@
       </nav>
     </div>
     <div class="container">
-      <a class="btn btn-success" href="#" role="button">+ Tambah Members</a>
+      <a href="{{url ('/tampilan/member/create') }}" class="btn btn-success" role="button">+ Tambah Members</a>
       <br>
       <br>
       <!-- <a class="btn btn-primary" href="../kartu/list_vendor.php" role="button">Kartu</a> -->
@@ -44,9 +44,13 @@
                         <td>
     <a class="btn btn-primary" href="#?id=">View</a>
     <a class="btn btn-warning" href="#?idedit=">Edit</a>
-    <a class="btn btn-danger" href="#?iddel="
-    onclick="if(!confirm('Anda Yakin Hapus Data Kartu?')) {return false}"
-    >Delete</a>
+    <form action="{{ url('/tampilan/member/destroy', $member->id) }}" method="post" class="d-inline">
+    @csrf
+    @method('delete')
+    <button type="submit" class="btn btn-danger" onclick="if(!confirm('Anda Yakin Hapus Daftar Member?')) {return false}"
+    >Hapus</button>
+    </form>
+    
     </td>
     </tr>
     @endforeach
