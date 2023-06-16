@@ -16,44 +16,27 @@
       </nav>
     </div>
     <div class="container">
-      @if (session('success'))
-          <div class="alert alert-success">
-            {{ session('success') }}
-          </div>          
-      @endif
-      <a href="{{url ('/tampilan/book/create') }}" class="btn btn-success" role="button">+ Tambah Buku</a>
       <br>
       <br>
       <!-- <a class="btn btn-primary" href="../kartu/list_vendor.php" role="button">Kartu</a> -->
         <table class="table table-hover table-bordered" width="100%" border="1" cellspacing="2" cellpadding="2">
             <thead>
                 <tr class="table-primary text-uppercase">
-                    <th>No</th>
+                    <th>Id</th>
                     <th>Judul</th>
                     <th>Isbn</th>
-                    <th>Jumlah tersedia</th>
-                    <th>Action</th>
+                    <th>Stok</th>
+                    <th>Data dibuat Pada</th>
                 </tr>
             </thead>
             <tbody>
-              @foreach ($books as $book)
-                    <tr class="table-light text-uppercase">
-                        <td> {{ $loop->iteration }}</td>
+                <tr class="table-light text-uppercase">
+                        <td> {{ $book->id }}</td>
                         <td> {{ $book->title }}</td>
                         <td> {{ $book->isbn }}</td>
                         <td> {{ $book->stok }}</td>
-                        <td>
-    <a class="btn btn-primary" href="{{ url('/tampilan/book/show', $book->id) }}">View</a>
-    <a class="btn btn-warning" href="{{ url('/tampilan/book/edit', $book->id) }}">Edit</a>
-    <form action="{{ url('/tampilan/book/destroy', $book->id) }}" method="post" class="d-inline">
-    @csrf
-    @method('delete')
-    <button type="submit" class="btn btn-danger" onclick="if(!confirm('Anda Yakin Hapus Daftar Buku?')) {return false}"
-    >Hapus</button>
-    </form>
-    </td>
-    </tr>
-    @endforeach
+                        <td> {{ $book->created_at }}</td>
+             </tr>
             </tbody>
         </table>  
         </div>

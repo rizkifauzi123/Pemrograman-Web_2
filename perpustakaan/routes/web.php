@@ -73,3 +73,10 @@ Route::delete('/tampilan/book/destroy/{id}', [BookController::class, 'destroy'])
 Route::get('/tampilan/member/create', [MemberController::class, 'create']);
 Route::post('/tampilan/member/store', [MemberController::class, 'store']);
 Route::delete('/tampilan/member/destroy/{id}', [MemberController::class, 'destroy']);
+
+
+// Praktikum 13 - Edit & Detail
+
+Route::get('/tampilan/book/edit/{id}', [BookController::class, 'edit']);
+Route::put('/tampilan/book/update/{id}', [BookController::class, 'update']);
+Route::get('/tampilan/book/show/{id}', [BookController::class, 'show']);
