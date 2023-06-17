@@ -52,7 +52,11 @@ class MemberController extends Controller
      */
     public function show(string $id)
     {
-        //
+        // Mendapatkan data berdasarkan ID 
+        $member = Member::find($id);
+        return view('pinjaman.member.show', [
+            'member' => $member
+        ]);
     }
 
     /**
@@ -60,7 +64,11 @@ class MemberController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        // Mendapatkan data berdasarkan ID
+        $member = Member::find($id);
+        return view('pinjaman.member.edit', [
+            'member' => $member
+        ]);
     }
 
     /**
@@ -68,7 +76,27 @@ class MemberController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $member = Member::find($id);
+
+        // validasi form input
+        $validasi = $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'gender' => 'required|in:Pria,Wanita',
+            'status' => 'required',
+            'address' => 'required',
+        ]);
+
+        // Update data 
+
+        $member->name = $request->input('name');
+        $member->email= $request->input('email');
+        $member->gender= $request->input('gender');
+        $member->status= $request->input('status');
+        $member->address= $request->input('address');
+        $member->save();
+
+        return redirect('/tampilan/member')->with('success', 'Data Berhasil di Perbaharui!');
     }
 
     /**

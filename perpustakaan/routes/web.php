@@ -80,3 +80,9 @@ Route::delete('/tampilan/member/destroy/{id}', [MemberController::class, 'destro
 Route::get('/tampilan/book/edit/{id}', [BookController::class, 'edit']);
 Route::put('/tampilan/book/update/{id}', [BookController::class, 'update']);
 Route::get('/tampilan/book/show/{id}', [BookController::class, 'show']);
+
+// Tugas pekan 13 - Edit & Detail 
+
+Route::get('/tampilan/member/edit/{id}', [MemberController::class, 'edit']);
+Route::put('/tampilan/member/update/{id}', [MemberController::class, 'update']);
+Route::get('/tampilan/member/show/{id}', [MemberController::class, 'show']);
