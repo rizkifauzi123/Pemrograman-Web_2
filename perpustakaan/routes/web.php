@@ -49,40 +49,48 @@ Route::post('/hasil-peminjaman', [RegistrasiPeminjamanController::class, 'hasil'
 
 //praktkum 10
 Route::get('/dashboard', [DashboardController::class, 'index']);
+    
+    
 
 
 //tugas pekan ke 10
 
-Route::get('/tampilan', [DashboardPeminjamanController::class, 'index']);
-//Route::get('/books', [BooksController::class, 'index']);
+Route::get('/tampilan', [DashboardPeminjamanController::class, 'index'])->middleware('auth');
+  Route::get('/books', [BooksController::class, 'index']);
 
 
 // praktikum 11
-Route::get('/tampilan/book', [BookController::class, 'index']);
+Route::get('/tampilan/book', [BookController::class, 'index'])->middleware('auth');
 
-Route::get('/tampilan/member', [MemberController::class, 'index']);
+Route::get('/tampilan/member', [MemberController::class, 'index'])->middleware('auth');
 
 
 // praktikum 12
-Route::get('/tampilan/book/create', [BookController::class, 'create']);
-Route::post('/tampilan/book/store', [BookController::class, 'store']);
-Route::delete('/tampilan/book/destroy/{id}', [BookController::class, 'destroy']);
+Route::get('/tampilan/book/create', [BookController::class, 'create'])->middleware('auth');
+Route::post('/tampilan/book/store', [BookController::class, 'store'])->middleware('auth');
+Route::delete('/tampilan/book/destroy/{id}', [BookController::class, 'destroy'])->middleware('auth');
 
 
 // Tugas Pekan 12
-Route::get('/tampilan/member/create', [MemberController::class, 'create']);
-Route::post('/tampilan/member/store', [MemberController::class, 'store']);
-Route::delete('/tampilan/member/destroy/{id}', [MemberController::class, 'destroy']);
+Route::get('/tampilan/member/create', [MemberController::class, 'create'])->middleware('auth');
+Route::post('/tampilan/member/store', [MemberController::class, 'store'])->middleware('auth');
+Route::delete('/tampilan/member/destroy/{id}', [MemberController::class, 'destroy'])->middleware('auth');
 
 
 // Praktikum 13 - Edit & Detail
 
-Route::get('/tampilan/book/edit/{id}', [BookController::class, 'edit']);
-Route::put('/tampilan/book/update/{id}', [BookController::class, 'update']);
-Route::get('/tampilan/book/show/{id}', [BookController::class, 'show']);
+Route::get('/tampilan/book/edit/{id}', [BookController::class, 'edit'])->middleware('auth');
+Route::put('/tampilan/book/update/{id}', [BookController::class, 'update'])->middleware('auth');
+Route::get('/tampilan/book/show/{id}', [BookController::class, 'show'])->middleware('auth');
 
 // Tugas pekan 13 - Edit & Detail 
 
-Route::get('/tampilan/member/edit/{id}', [MemberController::class, 'edit']);
-Route::put('/tampilan/member/update/{id}', [MemberController::class, 'update']);
-Route::get('/tampilan/member/show/{id}', [MemberController::class, 'show']);
+Route::get('/tampilan/member/edit/{id}', [MemberController::class, 'edit'])->middleware('auth');
+Route::put('/tampilan/member/update/{id}', [MemberController::class, 'update'])->middleware('auth');
+Route::get('/tampilan/member/show/{id}', [MemberController::class, 'show'])->middleware('auth');
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
